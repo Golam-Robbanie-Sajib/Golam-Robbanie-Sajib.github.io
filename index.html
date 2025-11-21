@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Golam Robbanie - AI Engineer | Portfolio">
-    <title>Golam Robbanie - AI Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Golam Robbanie - AI Engineer specializing in NLP, LLM, and scalable backend architecture">
+    <title>Golam Robbanie</title>
     <style>
         * {
             margin: 0;
@@ -14,13 +13,13 @@
         }
 
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
-            --bg-white: #ffffff;
-            --border-color: #e5e7eb;
+            --accent: #0066cc;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #6a6a6a;
+            --border: #e0e0e0;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
         }
 
         html {
@@ -28,709 +27,640 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
+            color: var(--text-primary);
+            background: var(--bg);
         }
 
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.98);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
         }
 
         nav .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0.8rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
+        nav .name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: color 0.2s;
         }
 
         nav a:hover {
-            color: var(--primary-color);
+            color: var(--accent);
         }
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 60px;
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+        /* Header */
+        header {
+            padding: 8rem 0 4rem;
+            margin-top: 50px;
         }
 
-        .hero-content .title {
-            font-size: 1.5rem;
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        header .bio {
+            max-width: 700px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
             margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s both;
         }
 
-        .hero-content .cta {
-            display: inline-flex;
-            gap: 1rem;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .btn {
-            padding: 0.8rem 2rem;
-            border: 2px solid white;
-            background: transparent;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            background: white;
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary-color);
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            color: white;
-        }
-
-        .social-links {
-            margin-top: 2rem;
+        .links {
             display: flex;
             gap: 1.5rem;
-            justify-content: center;
-            animation: fadeInUp 1s ease 0.6s both;
+            flex-wrap: wrap;
         }
 
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: transform 0.3s;
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
         }
 
-        .social-links a:hover {
-            transform: translateY(-5px);
+        .links a:hover {
+            opacity: 0.7;
         }
 
+        .links a::before {
+            content: '→ ';
+            opacity: 0.6;
+        }
+
+        /* Sections */
         section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-            color: var(--text-dark);
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 1rem auto;
-            border-radius: 2px;
-        }
-
-        .about-content {
-            background: var(--bg-white);
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        .experience-item {
-            background: var(--bg-white);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .experience-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .experience-header {
-            margin-bottom: 1rem;
-        }
-
-        .experience-header h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-header .company {
-            color: var(--text-dark);
+        section h2 {
+            font-size: 1.3rem;
             font-weight: 600;
-            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
         }
 
-        .experience-header .period {
-            color: var(--text-light);
-            font-style: italic;
+        /* Experience */
+        .experience-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .exp-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .exp-header .period {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .company {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
         }
 
         .experience-item ul {
-            margin-left: 1.5rem;
-            color: var(--text-light);
+            list-style: none;
+            padding-left: 0;
         }
 
-        .experience-item ul li {
+        .experience-item li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding-left: 1.2rem;
             margin-bottom: 0.5rem;
+            position: relative;
         }
 
-        .tech-stack {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-dark);
+        .experience-item li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .tags {
+            margin-top: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: var(--bg-alt);
+            padding: 0.3rem 0.7rem;
+            border-radius: 3px;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.05rem;
             font-weight: 600;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .skill-category p {
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--bg-white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
+            color: var(--text-primary);
         }
 
         .project-meta {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        .project-content ul {
-            margin-left: 1.5rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
+        .project-item ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-item li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+            position: relative;
+        }
+
+        .project-item li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
         }
 
         .project-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
         }
 
         .project-links a {
-            color: var(--primary-color);
+            color: var(--accent);
             text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s;
+            font-size: 0.85rem;
+            transition: opacity 0.2s;
         }
 
         .project-links a:hover {
-            color: var(--secondary-color);
+            opacity: 0.7;
         }
 
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .skill-item strong {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            min-width: 120px;
+        }
+
+        .skill-item span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Education */
         .education-item {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             margin-bottom: 2rem;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
         }
 
         .education-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
         }
 
         .education-item .institution {
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
         }
 
         .education-item .period {
-            color: var(--text-light);
-            font-style: italic;
-            margin-bottom: 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
         }
 
-        .activities-list {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        .education-item .coursework {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
+        /* Activities */
         .activity-item {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
         }
 
         .activity-item:last-child {
-            border-bottom: none;
+            margin-bottom: 0;
         }
 
         .activity-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
         }
 
-        .activity-item .organization {
-            color: var(--text-dark);
-            font-weight: 600;
+        .activity-item .org {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
         .activity-item .period {
-            color: var(--text-light);
-            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-card {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-card i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h3 {
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-card a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-card a:hover {
-            color: var(--primary-color);
-        }
-
+        /* Footer */
         footer {
-            background: var(--text-dark);
-            color: white;
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            margin-top: 4rem;
             text-align: center;
-            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        /* Mobile */
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            color: var(--text-dark);
+            color: var(--text-primary);
         }
 
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
+            header h1 {
+                font-size: 2rem;
             }
 
-            .hero-content .title {
-                font-size: 1.2rem;
+            header .subtitle {
+                font-size: 1.1rem;
             }
 
             nav ul {
                 display: none;
             }
 
+            nav ul.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                border-bottom: 1px solid var(--border);
+                padding: 1rem 1.5rem;
+                gap: 0.8rem;
+            }
+
             .mobile-menu-btn {
                 display: block;
             }
 
-            section {
-                padding: 3rem 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .skills-grid,
-            .projects-grid {
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
 
-            .about-content {
-                padding: 2rem;
+            .skill-item {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+
+            .exp-header,
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">GR</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
+            <div class="name">Golam Robbanie</div>
+            <ul id="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>GOLAM ROBBANIE</h1>
-            <p class="title">AI Engineer | NLP & LLM Specialist</p>
-            <div class="cta">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#projects" class="btn">View Projects</a>
+    <main class="container">
+        <!-- Header -->
+        <header id="about">
+            <h1>Golam Robbanie</h1>
+            <p class="subtitle">AI Engineer</p>
+            <p class="bio">
+                AI Engineer with production experience in NLP, LLM, and scalable backend architecture.
+                Proven ability to build end-to-end ML pipelines with focus on performance optimization
+                and cloud deployment.
+            </p>
+            <div class="links">
+                <a href="mailto:grsajib.386@gmail.com">grsajib.386@gmail.com</a>
+                <a href="https://github.com/Golam-Robbanie-Sajib" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/golam-robbanie-sajib" target="_blank">LinkedIn</a>
+                <a href="tel:+8801791633112">+880 1791633112</a>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/Golam-Robbanie-Sajib" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/golam-robbanie-sajib" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:grsajib.386@gmail.com" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+        </header>
 
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            AI Engineer with production experience in NLP, LLM, and scalable backend architecture. Proven ability to build end-to-end ML pipelines with focus on performance optimization and cloud deployment. Passionate about creating innovative solutions that leverage cutting-edge AI technologies to solve real-world problems.
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="experience-item">
-            <div class="experience-header">
-                <h3>AI Engineer Intern</h3>
+        <!-- Experience -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>AI Engineer Intern</h3>
+                    <span class="period">Sep 2025 - Present</span>
+                </div>
                 <p class="company">ESAP AI</p>
-                <p class="period">September 2025 - Present</p>
+                <ul>
+                    <li>Architected production meeting analysis pipeline with AssemblyAI, Groq Whisper, and Google Gemini integration</li>
+                    <li>Deployed full-stack application on Render with FastAPI backend, Streamlit frontend, and PostgreSQL database</li>
+                    <li>Implemented automated CI/CD, environment-based configuration, and database migrations with SQLAlchemy ORM</li>
+                    <li>Built modular async pipeline with real-time progress tracking and multi-language support (Arabic/English)</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">AssemblyAI</span>
+                    <span class="tag">Groq</span>
+                    <span class="tag">Gemini API</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Streamlit</span>
+                    <span class="tag">Render</span>
+                </div>
             </div>
-            <ul>
-                <li>Architected production meeting analysis pipeline with AssemblyAI, Groq Whisper, and Google Gemini integration</li>
-                <li>Deployed full-stack application on Render with FastAPI backend, Streamlit frontend, and PostgreSQL database</li>
-                <li>Implemented automated CI/CD, environment-based configuration, and database migrations with SQLAlchemy ORM</li>
-                <li>Built modular async pipeline with real-time progress tracking and multi-language support (Arabic/English)</li>
-            </ul>
-            <p class="tech-stack">Tech Stack: Python, FastAPI, AssemblyAI, Groq, Gemini API, PostgreSQL, Streamlit, Render, llama.cpp</p>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3><i class="fas fa-code"></i> Programming</h3>
-                <p>Python, C, C#, JavaScript</p>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-globe"></i> Web Development</h3>
-                <p>FastAPI, Streamlit, React, HTML</p>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-brain"></i> AI/ML</h3>
-                <p>NLP, LLM Integration, Prompt Engineering, TensorFlow, llama.cpp</p>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-database"></i> Database</h3>
-                <p>PostgreSQL, SQLite, SQLAlchemy, MySQL</p>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-robot"></i> AI Services</h3>
-                <p>AssemblyAI, Groq, Gemini, Google APIs</p>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-tools"></i> DevOps & Tools</h3>
-                <p>Render, CI/CD, Git, Docker, REST APIs</p>
-            </div>
-        </div>
-    </section>
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
 
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-content">
+            <div class="project-item">
+                <div class="project-header">
                     <h3>Goal Planner App</h3>
-                    <p class="project-meta">Co-developed Project | May 2025</p>
-                    <ul>
-                        <li>Co-developed web-based planner for learning goals and progress tracking</li>
-                        <li>Implemented Google Calendar integration, LLM chat/plan generation</li>
-                        <li>Google Authentication and Firebase integration</li>
-                    </ul>
-                    <p class="tech-stack">JavaScript, React, Google Calendar API, Gemini LLM, Firebase</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Golam-Robbanie-Sajib/cloudflare-planner-app" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://cloudflare-planner-app.pages.dev/" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                    </div>
+                    <span class="project-meta">May 2025</span>
+                </div>
+                <ul>
+                    <li>Co-developed web-based planner for learning goals and progress tracking</li>
+                    <li>Implemented Google Calendar integration, LLM chat/plan generation, and Firebase authentication</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Google Calendar API</span>
+                    <span class="tag">Gemini LLM</span>
+                    <span class="tag">Firebase</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Golam-Robbanie-Sajib/cloudflare-planner-app" target="_blank">GitHub →</a>
+                    <a href="https://cloudflare-planner-app.pages.dev/" target="_blank">Live Demo →</a>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-content">
+            <div class="project-item">
+                <div class="project-header">
                     <h3>Ultra Low Latency Voice Assistant</h3>
-                    <p class="project-meta">Real-time AI Project | August 2025</p>
-                    <ul>
-                        <li>Developed real-time voice assistant with ultra-low latency response capabilities</li>
-                        <li>Implemented advanced voice processing and AI-powered conversational interface</li>
-                        <li>Optimized for real-time performance and user experience</li>
-                    </ul>
-                    <p class="tech-stack">Pipecat, RTVI, FastAPI, React, Next.js, Gemini Live</p>
-                    <div class="project-links">
-                        <a href="https://ullva-nine.vercel.app/" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                    </div>
+                    <span class="project-meta">Aug 2025</span>
+                </div>
+                <ul>
+                    <li>Developed real-time voice assistant with ultra-low latency response capabilities</li>
+                    <li>Implemented advanced voice processing and AI-powered conversational interface</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">Pipecat</span>
+                    <span class="tag">RTVI</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Gemini Live</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://ullva-nine.vercel.app/" target="_blank">Live Demo →</a>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-content">
+            <div class="project-item">
+                <div class="project-header">
                     <h3>Audio Summarization System</h3>
-                    <p class="project-meta">Final Year Project | August 2025</p>
-                    <ul>
-                        <li>Developing intelligent audio content summarization system using NLP and machine learning</li>
-                        <li>Implementing speech-to-text conversion and text summarization</li>
-                        <li>Building with deep learning models for accurate content analysis</li>
-                    </ul>
-                    <p class="tech-stack">Python, NLP libraries, TensorFlow</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Golam-Robbanie-Sajib/STTS" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
+                    <span class="project-meta">Aug 2025</span>
+                </div>
+                <ul>
+                    <li>Developing intelligent audio content summarization system using NLP and machine learning</li>
+                    <li>Implementing speech-to-text conversion and text summarization with deep learning models</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">TensorFlow</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Golam-Robbanie-Sajib/STTS" target="_blank">GitHub →</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="education-item">
-            <h3>Master of Science in Electrical and Electronic Engineering</h3>
-            <p class="institution">University of Chittagong</p>
-            <p class="period">September 2025 - Present</p>
-            <p><strong>Relevant Coursework:</strong> Transistor Design, Photonic IC Design</p>
-        </div>
-        <div class="education-item">
-            <h3>Bachelor of Science in Electrical and Electronic Engineering</h3>
-            <p class="institution">University of Chittagong</p>
-            <p class="period">January 2020 - August 2025</p>
-            <p><strong>Relevant Coursework:</strong> NumPy, Pandas, Matplotlib, MATLAB, Data Structures, Programming, Algorithms</p>
-        </div>
-    </section>
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <strong>Programming</strong>
+                    <span>Python, C, C#, JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <strong>Web</strong>
+                    <span>FastAPI, Streamlit, React, HTML</span>
+                </div>
+                <div class="skill-item">
+                    <strong>AI/ML</strong>
+                    <span>NLP, LLM Integration, Prompt Engineering, TensorFlow, llama.cpp</span>
+                </div>
+                <div class="skill-item">
+                    <strong>Database</strong>
+                    <span>PostgreSQL, SQLite, SQLAlchemy, MySQL</span>
+                </div>
+                <div class="skill-item">
+                    <strong>AI Services</strong>
+                    <span>AssemblyAI, Groq, Gemini, Google APIs</span>
+                </div>
+                <div class="skill-item">
+                    <strong>DevOps</strong>
+                    <span>Render, CI/CD, Git, Docker, REST APIs</span>
+                </div>
+            </div>
+        </section>
 
-    <section id="activities">
-        <h2 class="section-title">Co-curricular Activities</h2>
-        <div class="activities-list">
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Master of Science in Electrical and Electronic Engineering</h3>
+                <p class="institution">University of Chittagong</p>
+                <p class="period">Sep 2025 - Present</p>
+                <p class="coursework"><strong>Coursework:</strong> Transistor Design, Photonic IC Design</p>
+            </div>
+            <div class="education-item">
+                <h3>Bachelor of Science in Electrical and Electronic Engineering</h3>
+                <p class="institution">University of Chittagong</p>
+                <p class="period">Jan 2020 - Aug 2025</p>
+                <p class="coursework"><strong>Coursework:</strong> NumPy, Pandas, Matplotlib, MATLAB, Data Structures, Programming, Algorithms</p>
+            </div>
+        </section>
+
+        <!-- Activities -->
+        <section>
+            <h2>Leadership</h2>
             <div class="activity-item">
                 <h3>General Secretary</h3>
-                <p class="organization">IEEE Student Branch, University of Chittagong</p>
-                <p class="period">January 2025 - Present</p>
+                <p class="org">IEEE Student Branch, University of Chittagong</p>
+                <p class="period">Jan 2025 - Present</p>
             </div>
             <div class="activity-item">
                 <h3>Webmaster</h3>
-                <p class="organization">IEEE Student Branch, University of Chittagong</p>
-                <p class="period">April 2023 - January 2025</p>
+                <p class="org">IEEE Student Branch, University of Chittagong</p>
+                <p class="period">Apr 2023 - Jan 2025</p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-info">
-            <div class="contact-card">
-                <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
-                <a href="mailto:grsajib.386@gmail.com">grsajib.386@gmail.com</a>
-            </div>
-            <div class="contact-card">
-                <i class="fas fa-phone"></i>
-                <h3>Phone</h3>
-                <a href="tel:+8801791633112">+880 1791633112</a>
-            </div>
-            <div class="contact-card">
-                <i class="fab fa-github"></i>
-                <h3>GitHub</h3>
-                <a href="https://github.com/Golam-Robbanie-Sajib" target="_blank">@Golam-Robbanie-Sajib</a>
-            </div>
-            <div class="contact-card">
-                <i class="fab fa-linkedin"></i>
-                <h3>LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/golam-robbanie-sajib" target="_blank">Golam Robbanie Sajib</a>
-            </div>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Golam Robbanie. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Golam Robbanie</p>
+        </div>
     </footer>
 
     <script>
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu if open
+                    document.getElementById('nav-menu').classList.remove('mobile-open');
                 }
             });
         });
 
-        window.addEventListener('scroll', () => {
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('mobile-open');
+        }
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', function(e) {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-            } else {
-                nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            const menu = document.getElementById('nav-menu');
+            if (!nav.contains(e.target) && menu.classList.contains('mobile-open')) {
+                menu.classList.remove('mobile-open');
             }
         });
     </script>
