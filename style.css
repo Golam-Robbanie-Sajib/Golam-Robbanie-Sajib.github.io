@@ -61,6 +61,13 @@ nav a {
     color: var(--text-secondary);
     font-size: 0.9rem;
     transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+nav a i {
+    font-size: 1rem;
 }
 
 nav a:hover,
@@ -113,15 +120,17 @@ header .bio {
     text-decoration: none;
     font-size: 0.95rem;
     transition: opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .links a:hover {
     opacity: 0.7;
 }
 
-.links a::before {
-    content: '→ ';
-    opacity: 0.6;
+.links a i {
+    font-size: 1.1rem;
 }
 
 /* Sections */
@@ -344,6 +353,13 @@ section h4 {
     text-decoration: none;
     font-size: 0.85rem;
     transition: opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.project-links a i {
+    font-size: 0.95rem;
 }
 
 .project-links a:hover {
@@ -366,6 +382,14 @@ section h4 {
     color: var(--text-primary);
     font-size: 0.9rem;
     min-width: 120px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-item strong i {
+    color: var(--accent);
+    font-size: 1.1rem;
 }
 
 .skill-item span {
@@ -394,6 +418,12 @@ section h4 {
 .link-card:hover {
     border-color: var(--accent);
     transform: translateY(-2px);
+}
+
+.link-card .card-icon {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
 }
 
 .link-card h3 {
@@ -455,6 +485,12 @@ section h4 {
     background: var(--bg-alt);
     border: 1px solid var(--border);
     border-radius: 8px;
+}
+
+.contact-card .card-icon {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
 }
 
 .contact-card h3 {
