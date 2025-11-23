@@ -48,6 +48,17 @@ nav .name {
     font-weight: 600;
     font-size: 1.1rem;
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+nav .nav-profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
 }
 
 nav ul {
@@ -90,9 +101,9 @@ header {
 
 .header-content {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr;
     gap: 3rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .header-text {
@@ -594,7 +605,6 @@ footer {
     }
 
     .header-image {
-        order: -1;
         display: flex;
         justify-content: center;
     }
