@@ -9,6 +9,25 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://golam-robbanie-sajib.github.io/projects.html">
+    <meta property="og:title" content="Projects - Golam Robbanie">
+    <meta property="og:description" content="Explore my portfolio of AI engineering projects and solutions">
+    <meta property="og:image" content="https://golam-robbanie-sajib.github.io/profile.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://golam-robbanie-sajib.github.io/projects.html">
+    <meta property="twitter:title" content="Projects - Golam Robbanie">
+    <meta property="twitter:description" content="Explore my portfolio of AI engineering projects and solutions">
+    <meta property="twitter:image" content="https://golam-robbanie-sajib.github.io/profile.jpeg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -26,7 +45,7 @@
                 <li><a href="education.html"><i class="ri-graduation-cap-line"></i> Education</a></li>
                 <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle mobile menu">☰</button>
         </div>
     </nav>
 
@@ -36,7 +55,7 @@
             <p class="subtitle">Innovative solutions leveraging AI and modern web technologies</p>
         </header>
 
-        <section>
+        <section class="reveal">
             <div class="project-item">
                 <div class="project-header">
                     <h3>Goal Planner App</h3>

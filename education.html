@@ -9,6 +9,25 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://golam-robbanie-sajib.github.io/education.html">
+    <meta property="og:title" content="Education - Golam Robbanie">
+    <meta property="og:description" content="View my academic background and continuous learning journey">
+    <meta property="og:image" content="https://golam-robbanie-sajib.github.io/profile.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://golam-robbanie-sajib.github.io/education.html">
+    <meta property="twitter:title" content="Education - Golam Robbanie">
+    <meta property="twitter:description" content="View my academic background and continuous learning journey">
+    <meta property="twitter:image" content="https://golam-robbanie-sajib.github.io/profile.jpeg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -26,7 +45,7 @@
                 <li><a href="education.html" class="active"><i class="ri-graduation-cap-line"></i> Education</a></li>
                 <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle mobile menu">☰</button>
         </div>
     </nav>
 
@@ -36,7 +55,7 @@
             <p class="subtitle">Academic background and continuous learning</p>
         </header>
 
-        <section>
+        <section class="reveal">
             <div class="education-item">
                 <h3>Master of Science in Electrical and Electronic Engineering</h3>
                 <p class="institution">University of Chittagong</p>
@@ -77,7 +96,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="reveal">
             <h2>Certifications & Learning</h2>
             <div class="content-block">
                 <p>Continuously expanding knowledge through self-directed learning and hands-on projects:</p>
