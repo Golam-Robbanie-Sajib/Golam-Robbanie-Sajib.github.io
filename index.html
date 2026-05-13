@@ -1,151 +1,1045 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Golam Robbanie - AI Engineer specializing in NLP, LLM, and scalable backend architecture">
-    <title>Golam Robbanie - AI Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Golam Robbanie — AI Engineer specializing in NLP, LLM, and scalable backend architecture">
+  <title>Golam Robbanie — AI Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://golam-robbanie-sajib.github.io/">
+  <meta property="og:title" content="Golam Robbanie — AI Engineer">
+  <meta property="og:description" content="AI Engineer with production experience in NLP, LLM, and scalable backend architecture">
+  <meta property="og:image" content="https://golam-robbanie-sajib.github.io/profile.jpeg">
+  <meta property="twitter:card" content="summary_large_image">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://golam-robbanie-sajib.github.io/">
-    <meta property="og:title" content="Golam Robbanie - AI Engineer">
-    <meta property="og:description" content="AI Engineer with production experience in NLP, LLM, and scalable backend architecture">
-    <meta property="og:image" content="https://golam-robbanie-sajib.github.io/profile.jpeg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://golam-robbanie-sajib.github.io/">
-    <meta property="twitter:title" content="Golam Robbanie - AI Engineer">
-    <meta property="twitter:description" content="AI Engineer with production experience in NLP, LLM, and scalable backend architecture">
-    <meta property="twitter:image" content="https://golam-robbanie-sajib.github.io/profile.jpeg">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .nav-links-desktop { display: flex; }
+    @media (max-width: 640px) {
+      .nav-links-desktop { display: none !important; }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="name">Golam Robbanie</div>
-            <ul id="nav-menu">
-                <li><a href="index.html" class="active"><i class="ri-user-line"></i> About</a></li>
-                <li><a href="experience.html"><i class="ri-briefcase-line"></i> Experience</a></li>
-                <li><a href="projects.html"><i class="ri-code-box-line"></i> Projects</a></li>
-                <li><a href="education.html"><i class="ri-graduation-cap-line"></i> Education</a></li>
-                <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle mobile menu">☰</button>
-        </div>
-    </nav>
+  <div id="root"></div>
 
-    <main class="container">
-        <header>
-            <div class="header-content">
-                <div class="header-image">
-                    <img src="profile.jpeg" alt="Golam Robbanie" class="profile-pic">
-                </div>
-                <div class="header-text">
-                    <h1>Golam Robbanie</h1>
-                    <p class="subtitle">AI Engineer</p>
-                    <p class="bio">
-                        AI Engineer with production experience in NLP, LLM, and scalable backend architecture.
-                        Proven ability to build end-to-end ML pipelines with focus on performance optimization
-                        and cloud deployment.
-                    </p>
-                    <div class="links">
-                        <a href="mailto:grsajib.386@gmail.com"><i class="ri-mail-line"></i> Email</a>
-                        <a href="https://github.com/Golam-Robbanie-Sajib" target="_blank"><i class="ri-github-fill"></i> GitHub</a>
-                        <a href="https://www.linkedin.com/in/golam-robbanie-sajib" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a>
-                    </div>
-                    <div class="header-actions">
-                        <a href="resume.pdf" download class="btn-download"><i class="ri-download-line"></i> Download Resume</a>
-                    </div>
-                </div>
-            </div>
-        </header>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
 
-        <section class="reveal">
-            <h2>About Me</h2>
-            <div class="content-block">
-                <p>I'm an AI Engineer specializing in Natural Language Processing (NLP), Large Language Models (LLM),
-                and scalable backend architecture. Currently pursuing my Master's degree in Electrical and Electronic
-                Engineering at the University of Chittagong.</p>
+  <script>
+    window.TWEAK_DEFAULTS = { theme: "tech", hero: "split" };
+  </script>
 
-                <p>My expertise lies in building production-ready AI systems that solve real-world problems. I have hands-on
-                experience with modern AI technologies including AssemblyAI, Groq, Google Gemini, and various open-source
-                frameworks like llama.cpp.</p>
+  <script type="text/babel" data-presets="env,react">
+// === THEME DEFINITIONS ===
+const THEMES = {
+  editorial: {
+    name: 'Editorial',
+    fonts: {
+      heading: "'DM Serif Display', serif",
+      body: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      mono: "monospace",
+    },
+    light: {
+      bg: '#FAFAF7', bgAlt: '#F0EFE9', text: '#1A1A18', textSecondary: '#4A4A45',
+      textMuted: '#8A8A82', accent: '#6B7F5E', accentHover: '#556B49',
+      border: '#E0DFD8', cardBg: '#FFFFFF', navBg: 'rgba(250,250,247,0.95)',
+    },
+    dark: {
+      bg: '#1A1A18', bgAlt: '#252522', text: '#EAEAE5', textSecondary: '#B0B0A8',
+      textMuted: '#787870', accent: '#8FA87E', accentHover: '#A3BF92',
+      border: '#333330', cardBg: '#222220', navBg: 'rgba(26,26,24,0.95)',
+    },
+  },
+  tech: {
+    name: 'Monochrome Tech',
+    fonts: {
+      heading: "'Space Grotesk', sans-serif",
+      body: "'Space Grotesk', sans-serif",
+      mono: "'JetBrains Mono', monospace",
+    },
+    light: {
+      bg: '#F7F8FA', bgAlt: '#ECEEF2', text: '#0F1419', textSecondary: '#3D4550',
+      textMuted: '#6B7280', accent: '#0D9488', accentHover: '#0F766E',
+      border: '#D1D5DB', cardBg: '#FFFFFF', navBg: 'rgba(247,248,250,0.95)',
+    },
+    dark: {
+      bg: '#0F1419', bgAlt: '#1A1F27', text: '#E5E7EB', textSecondary: '#9CA3AF',
+      textMuted: '#6B7280', accent: '#2DD4BF', accentHover: '#5EEAD4',
+      border: '#2A3040', cardBg: '#161B22', navBg: 'rgba(15,20,25,0.95)',
+    },
+  },
+  bold: {
+    name: 'Bold Geometric',
+    fonts: {
+      heading: "'Syne', sans-serif",
+      body: "'DM Sans', sans-serif",
+      mono: "monospace",
+    },
+    light: {
+      bg: '#FAFAFC', bgAlt: '#EEEEF5', text: '#111128', textSecondary: '#3D3D5C',
+      textMuted: '#7171A0', accent: '#6C3CE0', accentHover: '#5A2DC5',
+      border: '#DDDDE8', cardBg: '#FFFFFF', navBg: 'rgba(250,250,252,0.95)',
+    },
+    dark: {
+      bg: '#111128', bgAlt: '#1A1A38', text: '#EDEDF5', textSecondary: '#A5A5C0',
+      textMuted: '#7171A0', accent: '#A78BFA', accentHover: '#C4B5FD',
+      border: '#2A2A48', cardBg: '#181835', navBg: 'rgba(17,17,40,0.95)',
+    },
+  },
+};
 
-                <p>I'm passionate about creating efficient, scalable solutions and staying at the forefront of AI innovation.
-                When I'm not coding, I contribute to the tech community through my leadership role at the IEEE Student Branch.</p>
-            </div>
-        </section>
+// === DATA ===
+const DATA = {
+  name: 'Golam Robbanie',
+  title: 'AI Engineer',
+  bio: 'AI Engineer with production experience in NLP, LLM integration, and scalable backend architecture. Building end-to-end ML pipelines with a focus on performance and cloud deployment.',
+  email: 'grsajib.386@gmail.com',
+  github: 'https://github.com/Golam-Robbanie-Sajib',
+  linkedin: 'https://www.linkedin.com/in/golam-robbanie-sajib',
+  location: 'Chittagong, Bangladesh',
+  skills: [
+    { category: 'Languages', items: 'Python, JavaScript, TypeScript, C, C#' },
+    { category: 'AI / ML', items: 'NLP, LLM Integration, Prompt Engineering, TensorFlow, Whisper, BanglaASR, llama.cpp' },
+    { category: 'AI Services', items: 'Google Gemini, Gemini Live, AssemblyAI, Groq, Pipecat, RTVI' },
+    { category: 'Backend', items: 'FastAPI, Hono.js, WebSocket, REST APIs, Protobuf' },
+    { category: 'Frontend', items: 'React, Next.js, Tailwind CSS, Shadcn/UI, Streamlit, Gradio' },
+    { category: 'Database', items: 'PostgreSQL, Firebase Firestore, Supabase, SQLite, SQLAlchemy' },
+    { category: 'Cloud / DevOps', items: 'Cloudflare Workers, Render, Vercel, Docker, CI/CD, Git' },
+    { category: 'Protocols', items: 'OAuth 2.0, Google Calendar API, WebRTC, real-time streaming' },
+  ],
+  experience: [
+    {
+      role: 'AI Engineer Intern',
+      company: 'ESAP AI',
+      period: 'Sep 2025 – Present',
+      bullets: [
+        'Architected production meeting analysis pipeline with AssemblyAI, Groq Whisper, and Gemini',
+        'Deployed full-stack app on Render with FastAPI, Streamlit, and PostgreSQL',
+        'Built modular async pipeline with real-time progress tracking and multi-language support',
+      ],
+      tags: ['Python', 'FastAPI', 'AssemblyAI', 'Groq', 'Gemini', 'PostgreSQL'],
+    },
+  ],
+  leadership: [
+    { role: 'General Secretary', org: 'IEEE Student Branch, University of Chittagong', period: 'Jan 2025 – Present' },
+    { role: 'Webmaster', org: 'IEEE Student Branch, University of Chittagong', period: 'Apr 2023 – Jan 2025' },
+  ],
+  projects: [
+    {
+      name: 'Ultra Low Latency Voice Agent',
+      date: 'Aug 2025',
+      type: 'Real-time AI',
+      desc: 'Sub-500ms voice-to-voice agent using native Gemini Live audio streaming — no STT/TTS overhead. Supports voice-controlled form filling via tool calling over WebSocket.',
+      tags: ['Pipecat', 'Gemini Live', 'FastAPI', 'Next.js', 'WebSocket'],
+      live: 'https://ullva-nine.vercel.app/',
+    },
+    {
+      name: 'AI Goal Planner',
+      date: 'May 2025',
+      type: 'Co-developed',
+      desc: 'AI productivity app that converts natural-language goals into structured plans with Google Calendar sync. Hono.js edge backend on Cloudflare Workers, Firestore real-time DB.',
+      tags: ['Next.js 15', 'Hono.js', 'Gemini', 'Firebase', 'Cloudflare Workers'],
+      github: 'https://github.com/Golam-Robbanie-Sajib/cloudflare-planner-app',
+      live: 'https://cloudflare-planner-app.pages.dev/',
+    },
+    {
+      name: 'Audio Summarization System',
+      date: 'Aug 2025',
+      type: 'Final Year Project',
+      desc: 'Speech-to-text system with BanglaASR (4.58% WER), video support, intelligent chunked processing for unlimited-length audio, and Gemini-powered summaries.',
+      tags: ['Python', 'BanglaASR', 'Whisper', 'FastAPI', 'Gradio', 'TensorFlow'],
+      github: 'https://github.com/Golam-Robbanie-Sajib/STTS',
+    },
+  ],
+  education: [
+    { degree: 'M.Sc. Electrical & Electronic Engineering', school: 'University of Chittagong', period: 'Sep 2025 – Present', desc: 'Transistor Design, Photonic IC Design' },
+    { degree: 'B.Sc. Electrical & Electronic Engineering', school: 'University of Chittagong', period: 'Jan 2020 – Aug 2025', desc: 'Data Structures, Python/C/C++, Signal Processing, Digital Systems' },
+  ],
+};
 
-        <section class="reveal">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <strong><i class="ri-code-s-slash-line"></i> Programming</strong>
-                    <span>Python, C, C#, JavaScript</span>
-                </div>
-                <div class="skill-item">
-                    <strong><i class="ri-global-line"></i> Web</strong>
-                    <span>FastAPI, Streamlit, React, HTML</span>
-                </div>
-                <div class="skill-item">
-                    <strong><i class="ri-brain-line"></i> AI/ML</strong>
-                    <span>NLP, LLM Integration, Prompt Engineering, TensorFlow, llama.cpp</span>
-                </div>
-                <div class="skill-item">
-                    <strong><i class="ri-database-2-line"></i> Database</strong>
-                    <span>PostgreSQL, SQLite, SQLAlchemy, MySQL</span>
-                </div>
-                <div class="skill-item">
-                    <strong><i class="ri-robot-line"></i> AI Services</strong>
-                    <span>AssemblyAI, Groq, Gemini, Google APIs</span>
-                </div>
-                <div class="skill-item">
-                    <strong><i class="ri-tools-line"></i> DevOps</strong>
-                    <span>Render, CI/CD, Git, Docker, REST APIs</span>
-                </div>
-            </div>
-        </section>
+// === CONTEXT ===
+const ThemeContext = React.createContext();
 
-        <section class="reveal">
-            <h2>Quick Links</h2>
-            <div class="quick-links">
-                <a href="experience.html" class="link-card">
-                    <div class="card-icon"><i class="ri-briefcase-line"></i></div>
-                    <h3>Professional Experience</h3>
-                    <p>View my work history and achievements</p>
-                </a>
-                <a href="projects.html" class="link-card">
-                    <div class="card-icon"><i class="ri-code-box-line"></i></div>
-                    <h3>Projects</h3>
-                    <p>Explore my portfolio of work</p>
-                </a>
-                <a href="education.html" class="link-card">
-                    <div class="card-icon"><i class="ri-graduation-cap-line"></i></div>
-                    <h3>Education</h3>
-                    <p>Academic background and coursework</p>
-                </a>
-            </div>
-        </section>
-    </main>
+function useTheme() {
+  return React.useContext(ThemeContext);
+}
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Golam Robbanie. All rights reserved.</p>
-        </div>
-    </footer>
+// === NAV ===
+function Nav({ activeSection, onNav }) {
+  const { colors, fonts, dark, setDark, themeName } = useTheme();
+  const [scrolled, setScrolled] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    <script src="script.js"></script>
+  React.useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  const navItems = [
+    { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'education', label: 'Education' },
+    { id: 'contact', label: 'Contact' },
+  ];
+
+  const isBold = themeName === 'bold';
+  const isTech = themeName === 'tech';
+
+  return React.createElement('nav', {
+    style: {
+      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
+      background: colors.navBg,
+      backdropFilter: 'blur(12px)',
+      borderBottom: scrolled ? `1px solid ${colors.border}` : '1px solid transparent',
+      transition: 'all 0.3s ease',
+    }
+  },
+    React.createElement('div', {
+      style: {
+        maxWidth: 1000, margin: '0 auto', padding: '0.7rem 1.5rem',
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+      }
+    },
+      React.createElement('span', {
+        style: {
+          fontFamily: fonts.heading,
+          fontWeight: isBold ? 800 : 600,
+          fontSize: isBold ? '1.2rem' : '1.05rem',
+          color: colors.text,
+          letterSpacing: isBold ? '-0.02em' : '0',
+        }
+      }, DATA.name),
+      React.createElement('div', {
+        style: { display: 'flex', alignItems: 'center', gap: '0.3rem' }
+      },
+        React.createElement('div', {
+          style: { display: 'flex', gap: isTech ? '0' : '0.2rem', alignItems: 'center' },
+          className: 'nav-links-desktop'
+        },
+          navItems.map(item =>
+            React.createElement('button', {
+              key: item.id,
+              onClick: () => { onNav(item.id); setMobileOpen(false); },
+              style: {
+                background: activeSection === item.id ? (isTech ? colors.accent + '18' : 'transparent') : 'transparent',
+                border: 'none', cursor: 'pointer',
+                color: activeSection === item.id ? colors.accent : colors.textMuted,
+                fontFamily: isTech ? fonts.mono : fonts.body,
+                fontSize: isTech ? '0.78rem' : '0.85rem',
+                fontWeight: activeSection === item.id ? 600 : 400,
+                padding: isTech ? '0.4rem 0.7rem' : '0.4rem 0.65rem',
+                borderRadius: 4,
+                transition: 'all 0.2s',
+                letterSpacing: isBold ? '0.02em' : '0',
+                textTransform: isBold ? 'uppercase' : 'none',
+              }
+            }, isTech ? `/${item.id}` : item.label)
+          )
+        ),
+        React.createElement('button', {
+          onClick: () => setDark(!dark),
+          style: {
+            background: 'transparent', border: `1px solid ${colors.border}`,
+            cursor: 'pointer', color: colors.textMuted,
+            padding: '0.35rem 0.5rem', borderRadius: 6, marginLeft: '0.5rem',
+            fontSize: '0.85rem', display: 'flex', alignItems: 'center',
+            transition: 'all 0.2s',
+          },
+          title: dark ? 'Light mode' : 'Dark mode',
+        }, dark ? '☀' : '☾'),
+      )
+    )
+  );
+}
+
+// === HERO VARIANTS ===
+function HeroEditorial() {
+  const { colors, fonts } = useTheme();
+  return React.createElement('header', {
+    style: { padding: '10rem 1.5rem 5rem', maxWidth: 1000, margin: '0 auto' }
+  },
+    React.createElement('div', {
+      style: { display: 'grid', gridTemplateColumns: '180px 1fr', gap: '3rem', alignItems: 'end' }
+    },
+      React.createElement('div', null,
+        React.createElement('img', {
+          src: 'profile.jpeg',
+          style: {
+            width: 180, height: 180, borderRadius: '50%', objectFit: 'cover',
+            border: `3px solid ${colors.border}`, filter: 'grayscale(20%)',
+          }
+        })
+      ),
+      React.createElement('div', null,
+        React.createElement('p', {
+          style: {
+            fontFamily: fonts.mono, fontSize: '0.82rem', color: colors.accent,
+            letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.8rem',
+          }
+        }, DATA.title),
+        React.createElement('h1', {
+          style: {
+            fontFamily: fonts.heading, fontSize: '3.5rem', fontWeight: 400,
+            color: colors.text, lineHeight: 1.05, marginBottom: '1.5rem',
+          }
+        }, DATA.name),
+        React.createElement('p', {
+          style: {
+            fontSize: '1.05rem', lineHeight: 1.7, color: colors.textSecondary,
+            maxWidth: 520,
+          }
+        }, DATA.bio),
+        React.createElement('div', {
+          style: { display: 'flex', gap: '1.5rem', marginTop: '2rem' }
+        },
+          ...[ 
+            { label: 'GitHub', href: DATA.github, icon: 'ri-github-fill' },
+            { label: 'LinkedIn', href: DATA.linkedin, icon: 'ri-linkedin-fill' },
+            { label: 'Email', href: `mailto:${DATA.email}`, icon: 'ri-mail-line' },
+          ].map(l => React.createElement('a', {
+            key: l.label, href: l.href, target: l.href.startsWith('mailto') ? undefined : '_blank',
+            style: {
+              color: colors.accent, textDecoration: 'none', fontSize: '0.9rem',
+              fontFamily: fonts.body, borderBottom: `1px solid ${colors.accent}40`,
+              paddingBottom: 2, transition: 'all 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+            }
+          }, React.createElement('i', { className: l.icon, style: { fontSize: '1.1rem' } }), l.label))
+        )
+      )
+    )
+  );
+}
+
+function HeroTech() {
+  const { colors, fonts } = useTheme();
+  return React.createElement('header', {
+    style: { padding: '9rem 1.5rem 4rem', maxWidth: 1000, margin: '0 auto' }
+  },
+    React.createElement('div', {
+      style: { display: 'grid', gridTemplateColumns: '1fr auto', gap: '3rem', alignItems: 'center' }
+    },
+      React.createElement('div', null,
+        React.createElement('div', {
+          style: {
+            fontFamily: fonts.mono, fontSize: '0.78rem', color: colors.accent,
+            marginBottom: '1rem', opacity: 0.8,
+          }
+        }, '$ whoami'),
+        React.createElement('h1', {
+          style: {
+            fontFamily: fonts.heading, fontSize: '3rem', fontWeight: 700,
+            color: colors.text, lineHeight: 1.1, marginBottom: '0.5rem',
+            letterSpacing: '-0.03em',
+          }
+        }, DATA.name),
+        React.createElement('p', {
+          style: {
+            fontFamily: fonts.mono, fontSize: '1rem', color: colors.accent,
+            marginBottom: '1.5rem',
+          }
+        }, `> ${DATA.title}`),
+        React.createElement('p', {
+          style: {
+            fontSize: '0.95rem', lineHeight: 1.75, color: colors.textSecondary,
+            maxWidth: 500,
+          }
+        }, DATA.bio),
+        React.createElement('div', {
+          style: { display: 'flex', gap: '1rem', marginTop: '2rem' }
+        },
+          ...[
+            { label: 'github', href: DATA.github, icon: 'ri-github-fill' },
+            { label: 'linkedin', href: DATA.linkedin, icon: 'ri-linkedin-fill' },
+            { label: 'email', href: `mailto:${DATA.email}`, icon: 'ri-mail-line' },
+          ].map(l => React.createElement('a', {
+            key: l.label, href: l.href, target: l.href.startsWith('mailto') ? undefined : '_blank',
+            style: {
+              color: colors.text, textDecoration: 'none',
+              fontFamily: fonts.mono, fontSize: '0.8rem',
+              padding: '0.45rem 0.9rem',
+              border: `1px solid ${colors.border}`,
+              borderRadius: 4, transition: 'all 0.2s',
+              display: 'inline-flex', alignItems: 'center', gap: '0.45rem',
+            },
+            onMouseEnter: e => { e.currentTarget.style.borderColor = colors.accent; e.currentTarget.style.color = colors.accent; },
+            onMouseLeave: e => { e.currentTarget.style.borderColor = colors.border; e.currentTarget.style.color = colors.text; },
+          }, React.createElement('i', { className: l.icon, style: { fontSize: '1rem' } }), l.label))
+        )
+      ),
+      React.createElement('img', {
+        src: 'profile.jpeg',
+        style: {
+          width: 200, height: 200, borderRadius: 12, objectFit: 'cover',
+          border: `2px solid ${colors.border}`,
+        }
+      })
+    )
+  );
+}
+
+function HeroBold() {
+  const { colors, fonts } = useTheme();
+  return React.createElement('header', {
+    style: { padding: '8rem 1.5rem 4rem', maxWidth: 1000, margin: '0 auto' }
+  },
+    React.createElement('div', {
+      style: { position: 'relative' }
+    },
+      React.createElement('div', {
+        style: {
+          position: 'absolute', top: -30, right: 0, width: 300, height: 300,
+          borderRadius: '50%', background: colors.accent + '12',
+          filter: 'blur(60px)', pointerEvents: 'none',
+        }
+      }),
+      React.createElement('p', {
+        style: {
+          fontFamily: fonts.body, fontSize: '0.85rem', color: colors.accent,
+          fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
+          marginBottom: '1rem',
+        }
+      }, DATA.title),
+      React.createElement('div', {
+        style: { display: 'flex', gap: '2.5rem', alignItems: 'flex-end' }
+      },
+        React.createElement('div', { style: { flex: 1 } },
+          React.createElement('h1', {
+            style: {
+              fontFamily: fonts.heading, fontSize: '4.2rem', fontWeight: 800,
+              color: colors.text, lineHeight: 1.0, letterSpacing: '-0.04em',
+              marginBottom: '1.5rem',
+            }
+          }, DATA.name),
+          React.createElement('p', {
+            style: {
+              fontSize: '1.05rem', lineHeight: 1.7, color: colors.textSecondary,
+              maxWidth: 480,
+            }
+          }, DATA.bio),
+          React.createElement('div', {
+            style: { display: 'flex', gap: '0.8rem', marginTop: '2rem' }
+          },
+            React.createElement('a', {
+              href: DATA.github, target: '_blank',
+              style: {
+                padding: '0.65rem 1.4rem', background: colors.accent, color: '#fff',
+                textDecoration: 'none', borderRadius: 8, fontWeight: 600,
+                fontFamily: fonts.body, fontSize: '0.88rem', transition: 'all 0.2s',
+                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              }
+            }, React.createElement('i', { className: 'ri-github-fill' }), 'GitHub'),
+            React.createElement('a', {
+              href: DATA.linkedin, target: '_blank',
+              style: {
+                padding: '0.65rem 1.4rem', background: 'transparent',
+                color: colors.text, textDecoration: 'none', borderRadius: 8,
+                fontWeight: 600, fontFamily: fonts.body, fontSize: '0.88rem',
+                border: `1.5px solid ${colors.border}`, transition: 'all 0.2s',
+                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              }
+            }, React.createElement('i', { className: 'ri-linkedin-fill' }), 'LinkedIn'),
+          )
+        ),
+        React.createElement('img', {
+          src: 'profile.jpeg',
+          style: {
+            width: 220, height: 260, borderRadius: 20, objectFit: 'cover',
+            border: `3px solid ${colors.border}`,
+          }
+        })
+      )
+    )
+  );
+}
+
+// === SECTION COMPONENTS ===
+function SectionTitle({ children }) {
+  const { colors, fonts, themeName } = useTheme();
+  const isTech = themeName === 'tech';
+  const isBold = themeName === 'bold';
+  return React.createElement('h2', {
+    style: {
+      fontFamily: isTech ? fonts.mono : fonts.heading,
+      fontSize: isBold ? '2rem' : isTech ? '0.82rem' : '1.8rem',
+      fontWeight: isBold ? 800 : isTech ? 500 : 400,
+      color: isTech ? colors.accent : colors.text,
+      letterSpacing: isTech ? '0.06em' : isBold ? '-0.03em' : '0',
+      textTransform: isTech ? 'uppercase' : 'none',
+      marginBottom: '2rem',
+    }
+  }, isTech ? `## ${children}` : children);
+}
+
+function Section({ id, children }) {
+  const { colors } = useTheme();
+  return React.createElement('section', {
+    id,
+    style: {
+      padding: '4rem 1.5rem', maxWidth: 1000, margin: '0 auto',
+      borderTop: `1px solid ${colors.border}`,
+    }
+  }, children);
+}
+
+function SkillsSection() {
+  const { colors, fonts, themeName } = useTheme();
+  const isTech = themeName === 'tech';
+  return React.createElement(Section, { id: 'about' },
+    React.createElement(SectionTitle, null, 'Technical Skills'),
+    React.createElement('div', {
+      style: {
+        display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+        gap: '1.2rem',
+      }
+    },
+      DATA.skills.map(s =>
+        React.createElement('div', {
+          key: s.category,
+          style: {
+            padding: '1.2rem 1.4rem',
+            background: colors.cardBg,
+            border: `1px solid ${colors.border}`,
+            borderRadius: themeName === 'bold' ? 14 : isTech ? 4 : 8,
+            transition: 'all 0.25s',
+          },
+          onMouseEnter: e => { e.currentTarget.style.borderColor = colors.accent; e.currentTarget.style.transform = 'translateY(-2px)'; },
+          onMouseLeave: e => { e.currentTarget.style.borderColor = colors.border; e.currentTarget.style.transform = 'translateY(0)'; },
+        },
+          React.createElement('div', {
+            style: {
+              fontFamily: isTech ? fonts.mono : fonts.body,
+              fontWeight: 600, fontSize: isTech ? '0.8rem' : '0.9rem',
+              color: colors.accent, marginBottom: '0.4rem',
+              textTransform: isTech ? 'uppercase' : 'none',
+              letterSpacing: isTech ? '0.04em' : '0',
+            }
+          }, s.category),
+          React.createElement('div', {
+            style: {
+              fontSize: '0.88rem', color: colors.textSecondary, lineHeight: 1.6,
+            }
+          }, s.items)
+        )
+      )
+    )
+  );
+}
+
+function ExperienceSection() {
+  const { colors, fonts, themeName } = useTheme();
+  const isTech = themeName === 'tech';
+  return React.createElement(Section, { id: 'experience' },
+    React.createElement(SectionTitle, null, 'Experience'),
+    DATA.experience.map(exp =>
+      React.createElement('div', { key: exp.role, style: { marginBottom: '2.5rem' } },
+        React.createElement('div', {
+          style: { display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem' }
+        },
+          React.createElement('h3', {
+            style: { fontFamily: fonts.heading, fontSize: '1.2rem', fontWeight: 600, color: colors.text }
+          }, exp.role),
+          React.createElement('span', {
+            style: { fontFamily: isTech ? fonts.mono : fonts.body, fontSize: '0.82rem', color: colors.textMuted }
+          }, exp.period)
+        ),
+        React.createElement('p', {
+          style: { color: colors.accent, fontSize: '0.9rem', marginBottom: '1rem', fontWeight: 500 }
+        }, exp.company),
+        React.createElement('ul', {
+          style: { listStyle: 'none', padding: 0 }
+        },
+          exp.bullets.map((b, i) =>
+            React.createElement('li', {
+              key: i,
+              style: {
+                color: colors.textSecondary, fontSize: '0.92rem', lineHeight: 1.7,
+                paddingLeft: '1.2rem', position: 'relative', marginBottom: '0.4rem',
+              }
+            },
+              React.createElement('span', {
+                style: { position: 'absolute', left: 0, color: colors.accent }
+              }, isTech ? '→' : '·'),
+              b
+            )
+          )
+        ),
+        React.createElement('div', {
+          style: { display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: '1rem' }
+        },
+          exp.tags.map(t =>
+            React.createElement('span', {
+              key: t,
+              style: {
+                fontSize: '0.75rem', color: colors.textMuted, background: colors.bgAlt,
+                padding: '0.25rem 0.6rem', borderRadius: 3,
+                fontFamily: isTech ? fonts.mono : fonts.body,
+              }
+            }, t)
+          )
+        )
+      )
+    ),
+    React.createElement('div', { style: { marginTop: '1rem' } },
+      React.createElement('h3', {
+        style: { fontFamily: fonts.heading, fontSize: '1.1rem', fontWeight: 600, color: colors.text, marginBottom: '1.2rem' }
+      }, 'Leadership'),
+      DATA.leadership.map(l =>
+        React.createElement('div', {
+          key: l.role,
+          style: { marginBottom: '1rem', paddingBottom: '1rem', borderBottom: `1px solid ${colors.border}` }
+        },
+          React.createElement('div', {
+            style: { display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap' }
+          },
+            React.createElement('strong', { style: { color: colors.text, fontSize: '0.95rem' } }, l.role),
+            React.createElement('span', {
+              style: { fontSize: '0.8rem', color: colors.textMuted, fontFamily: isTech ? fonts.mono : fonts.body }
+            }, l.period)
+          ),
+          React.createElement('p', { style: { color: colors.textSecondary, fontSize: '0.88rem' } }, l.org)
+        )
+      )
+    )
+  );
+}
+
+function ProjectsSection() {
+  const { colors, fonts, themeName } = useTheme();
+  const isTech = themeName === 'tech';
+  const isBold = themeName === 'bold';
+  return React.createElement(Section, { id: 'projects' },
+    React.createElement(SectionTitle, null, 'Projects'),
+    React.createElement('div', {
+      style: { display: 'grid', gap: '1.5rem' }
+    },
+      DATA.projects.map(p =>
+        React.createElement('div', {
+          key: p.name,
+          style: {
+            padding: '1.8rem', background: colors.cardBg,
+            border: `1px solid ${colors.border}`,
+            borderRadius: isBold ? 16 : isTech ? 4 : 10,
+            transition: 'all 0.3s',
+          },
+          onMouseEnter: e => { e.currentTarget.style.borderColor = colors.accent; e.currentTarget.style.transform = 'translateY(-3px)'; },
+          onMouseLeave: e => { e.currentTarget.style.borderColor = colors.border; e.currentTarget.style.transform = 'translateY(0)'; },
+        },
+          React.createElement('div', {
+            style: { display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.3rem', flexWrap: 'wrap' }
+          },
+            React.createElement('h3', {
+              style: { fontFamily: fonts.heading, fontSize: '1.15rem', fontWeight: 600, color: colors.text }
+            }, p.name),
+            React.createElement('span', {
+              style: { fontSize: '0.78rem', color: colors.textMuted, fontFamily: isTech ? fonts.mono : fonts.body }
+            }, p.date)
+          ),
+          React.createElement('span', {
+            style: { fontSize: '0.82rem', color: colors.accent, fontWeight: 500, fontStyle: 'italic' }
+          }, p.type),
+          React.createElement('p', {
+            style: { color: colors.textSecondary, fontSize: '0.92rem', lineHeight: 1.7, margin: '0.8rem 0' }
+          }, p.desc),
+          React.createElement('div', {
+            style: { display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1rem' }
+          },
+            p.tags.map(t =>
+              React.createElement('span', {
+                key: t,
+                style: {
+                  fontSize: '0.73rem', color: colors.textMuted,
+                  background: colors.bgAlt, padding: '0.2rem 0.55rem', borderRadius: 3,
+                  fontFamily: isTech ? fonts.mono : fonts.body,
+                }
+              }, t)
+            )
+          ),
+          React.createElement('div', { style: { display: 'flex', gap: '1rem' } },
+            p.github && React.createElement('a', {
+              href: p.github, target: '_blank',
+              style: { color: colors.accent, textDecoration: 'none', fontSize: '0.85rem', fontFamily: isTech ? fonts.mono : fonts.body, display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }
+            }, React.createElement('i', { className: 'ri-github-fill', style: { fontSize: '1rem' } }), 'Source'),
+            p.live && React.createElement('a', {
+              href: p.live, target: '_blank',
+              style: { color: colors.accent, textDecoration: 'none', fontSize: '0.85rem', fontFamily: isTech ? fonts.mono : fonts.body, display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }
+            }, React.createElement('i', { className: 'ri-external-link-line', style: { fontSize: '1rem' } }), 'Demo')
+          )
+        )
+      )
+    )
+  );
+}
+
+function EducationSection() {
+  const { colors, fonts, themeName } = useTheme();
+  const isTech = themeName === 'tech';
+  return React.createElement(Section, { id: 'education' },
+    React.createElement(SectionTitle, null, 'Education'),
+    DATA.education.map(e =>
+      React.createElement('div', {
+        key: e.degree, style: { marginBottom: '2rem' }
+      },
+        React.createElement('h3', {
+          style: { fontFamily: fonts.heading, fontSize: '1.1rem', fontWeight: 600, color: colors.text, marginBottom: '0.3rem' }
+        }, e.degree),
+        React.createElement('p', { style: { color: colors.textSecondary, fontSize: '0.92rem' } }, e.school),
+        React.createElement('p', {
+          style: { color: colors.textMuted, fontSize: '0.82rem', fontFamily: isTech ? fonts.mono : fonts.body, marginBottom: '0.5rem' }
+        }, e.period),
+        React.createElement('p', {
+          style: { color: colors.textSecondary, fontSize: '0.88rem', lineHeight: 1.6 }
+        }, e.desc)
+      )
+    )
+  );
+}
+
+function ContactSection() {
+  const { colors, fonts, themeName } = useTheme();
+  const isTech = themeName === 'tech';
+  const isBold = themeName === 'bold';
+  const links = [
+    { label: 'Email', value: DATA.email, href: `mailto:${DATA.email}`, icon: 'ri-mail-line' },
+    { label: 'GitHub', value: '@Golam-Robbanie-Sajib', href: DATA.github, icon: 'ri-github-fill' },
+    { label: 'LinkedIn', value: 'golam-robbanie-sajib', href: DATA.linkedin, icon: 'ri-linkedin-fill' },
+  ];
+  return React.createElement(Section, { id: 'contact' },
+    React.createElement(SectionTitle, null, 'Get in Touch'),
+    React.createElement('p', {
+      style: { color: colors.textSecondary, fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem', maxWidth: 500 }
+    }, 'Open to AI/ML engineering roles, collaborative projects, and research opportunities. Based in Chittagong, Bangladesh — available for remote work worldwide.'),
+    React.createElement('div', {
+      style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1rem' }
+    },
+      links.map(l =>
+        React.createElement('a', {
+          key: l.label, href: l.href, target: l.href.startsWith('mailto') ? undefined : '_blank',
+          style: {
+            display: 'block', padding: '1.3rem 1.5rem',
+            background: colors.cardBg, border: `1px solid ${colors.border}`,
+            borderRadius: isBold ? 14 : isTech ? 4 : 8,
+            textDecoration: 'none', transition: 'all 0.25s',
+          },
+          onMouseEnter: e => { e.currentTarget.style.borderColor = colors.accent; e.currentTarget.style.transform = 'translateY(-2px)'; },
+          onMouseLeave: e => { e.currentTarget.style.borderColor = colors.border; e.currentTarget.style.transform = 'translateY(0)'; },
+        },
+          React.createElement('div', {
+            style: {
+              fontWeight: 600, color: colors.text, fontSize: '0.92rem', marginBottom: '0.3rem',
+              fontFamily: isTech ? fonts.mono : fonts.body,
+              display: 'flex', alignItems: 'center', gap: '0.5rem',
+            }
+          }, React.createElement('i', { className: l.icon, style: { color: colors.accent, fontSize: '1.1rem' } }), l.label),
+          React.createElement('div', {
+            style: { color: colors.accent, fontSize: '0.85rem' }
+          }, l.value)
+        )
+      )
+    )
+  );
+}
+
+function Footer() {
+  const { colors, fonts } = useTheme();
+  return React.createElement('footer', {
+    style: {
+      borderTop: `1px solid ${colors.border}`, padding: '2rem 1.5rem',
+      textAlign: 'center', color: colors.textMuted, fontSize: '0.82rem',
+      maxWidth: 1000, margin: '0 auto',
+    }
+  }, `© 2026 ${DATA.name}`);
+}
+
+// === TWEAKS PANEL ===
+function TweaksPanel({ tweaks, setTweaks }) {
+  const { colors, fonts } = useTheme();
+  const panelStyles = {
+    position: 'fixed', bottom: 20, right: 20, zIndex: 200,
+    background: colors.cardBg, border: `1px solid ${colors.border}`,
+    borderRadius: 14, padding: '1.2rem 1.4rem', width: 260,
+    boxShadow: `0 8px 30px ${colors.text}15`,
+    fontFamily: fonts.body,
+  };
+
+  const labelStyle = {
+    fontSize: '0.72rem', color: colors.textMuted, textTransform: 'uppercase',
+    letterSpacing: '0.06em', fontWeight: 600, marginBottom: '0.5rem', display: 'block',
+  };
+
+  const btnGroup = (options, current, onChange) =>
+    React.createElement('div', {
+      style: { display: 'flex', gap: '0.3rem', marginBottom: '1rem' }
+    },
+      options.map(opt =>
+        React.createElement('button', {
+          key: opt.value,
+          onClick: () => onChange(opt.value),
+          style: {
+            flex: 1, padding: '0.4rem 0.3rem', fontSize: '0.76rem',
+            fontFamily: fonts.body, fontWeight: 500,
+            background: current === opt.value ? colors.accent : 'transparent',
+            color: current === opt.value ? '#fff' : colors.textMuted,
+            border: `1px solid ${current === opt.value ? colors.accent : colors.border}`,
+            borderRadius: 6, cursor: 'pointer', transition: 'all 0.15s',
+          }
+        }, opt.label)
+      )
+    );
+
+  return React.createElement('div', { style: panelStyles },
+    React.createElement('div', {
+      style: { fontSize: '0.78rem', fontWeight: 700, color: colors.text, marginBottom: '1rem', letterSpacing: '0.02em' }
+    }, 'Tweaks'),
+    React.createElement('span', { style: labelStyle }, 'Theme'),
+    btnGroup(
+      [{ value: 'editorial', label: 'Editorial' }, { value: 'tech', label: 'Tech' }, { value: 'bold', label: 'Bold' }],
+      tweaks.theme, v => setTweaks({ ...tweaks, theme: v })
+    ),
+    React.createElement('span', { style: labelStyle }, 'Hero Layout'),
+    btnGroup(
+      [{ value: 'split', label: 'Split' }, { value: 'textFirst', label: 'Text-first' }, { value: 'centered', label: 'Centered' }],
+      tweaks.hero, v => setTweaks({ ...tweaks, hero: v })
+    ),
+  );
+}
+
+// === MAIN APP ===
+function App() {
+  const defaultTweaks = Object.assign({}, window.TWEAK_DEFAULTS);
+  const [tweaks, setTweaks] = React.useState(defaultTweaks);
+  const [dark, setDark] = React.useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const [activeSection, setActiveSection] = React.useState('about');
+  const [editMode, setEditMode] = React.useState(false);
+
+  // Edit mode protocol
+  React.useEffect(() => {
+    const handler = (e) => {
+      if (e.data && e.data.type === '__activate_edit_mode') setEditMode(true);
+      if (e.data && e.data.type === '__deactivate_edit_mode') setEditMode(false);
+    };
+    window.addEventListener('message', handler);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => window.removeEventListener('message', handler);
+  }, []);
+
+  // Persist tweaks
+  React.useEffect(() => {
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: tweaks }, '*');
+  }, [tweaks]);
+
+  // Scroll spy
+  React.useEffect(() => {
+    const sections = ['about', 'experience', 'projects', 'education', 'contact'];
+    const handler = () => {
+      for (const id of [...sections].reverse()) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top < 200) {
+          setActiveSection(id);
+          break;
+        }
+      }
+    };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  const onNav = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
+  const themeKey = tweaks.theme || 'editorial';
+  const theme = THEMES[themeKey];
+  const colors = dark ? theme.dark : theme.light;
+  const fonts = theme.fonts;
+
+  const heroMap = {
+    editorial: { split: HeroEditorial, textFirst: HeroEditorial, centered: HeroEditorial },
+    tech: { split: HeroTech, textFirst: HeroTech, centered: HeroTech },
+    bold: { split: HeroBold, textFirst: HeroBold, centered: HeroBold },
+  };
+
+  // Choose hero based on theme + hero tweak
+  let HeroComponent;
+  if (tweaks.hero === 'split') {
+    HeroComponent = themeKey === 'editorial' ? HeroEditorial : themeKey === 'tech' ? HeroTech : HeroBold;
+  } else if (tweaks.hero === 'textFirst') {
+    HeroComponent = HeroTextFirst;
+  } else {
+    HeroComponent = HeroCentered;
+  }
+
+  return React.createElement(ThemeContext.Provider, {
+    value: { colors, fonts, dark, setDark, themeName: themeKey }
+  },
+    React.createElement('div', {
+      style: {
+        background: colors.bg, color: colors.text, minHeight: '100vh',
+        fontFamily: fonts.body, transition: 'background 0.3s, color 0.3s',
+      }
+    },
+      React.createElement(Nav, { activeSection, onNav }),
+      React.createElement(HeroComponent, null),
+      React.createElement(SkillsSection, null),
+      React.createElement(ExperienceSection, null),
+      React.createElement(ProjectsSection, null),
+      React.createElement(EducationSection, null),
+      React.createElement(ContactSection, null),
+      React.createElement(Footer, null),
+      editMode && React.createElement(TweaksPanel, { tweaks, setTweaks }),
+    )
+  );
+}
+
+// === HERO: TEXT-FIRST ===
+function HeroTextFirst() {
+  const { colors, fonts, themeName } = useTheme();
+  const isTech = themeName === 'tech';
+  const isBold = themeName === 'bold';
+  return React.createElement('header', {
+    style: { padding: '10rem 1.5rem 5rem', maxWidth: 1000, margin: '0 auto' }
+  },
+    React.createElement('p', {
+      style: {
+        fontFamily: isTech ? fonts.mono : fonts.body,
+        fontSize: '0.85rem', color: colors.accent,
+        fontWeight: 500, marginBottom: '1rem',
+        letterSpacing: isTech ? '0.06em' : isBold ? '0.1em' : '0',
+        textTransform: isTech || isBold ? 'uppercase' : 'none',
+      }
+    }, isTech ? '$ whoami' : DATA.title),
+    React.createElement('h1', {
+      style: {
+        fontFamily: fonts.heading,
+        fontSize: isBold ? '4.5rem' : isTech ? '3.2rem' : '3.8rem',
+        fontWeight: isBold ? 800 : isTech ? 700 : 400,
+        color: colors.text, lineHeight: 1.0,
+        letterSpacing: isBold ? '-0.04em' : isTech ? '-0.03em' : '0',
+        marginBottom: '1.5rem',
+      }
+    }, DATA.name),
+    React.createElement('p', {
+      style: {
+        fontSize: '1.1rem', lineHeight: 1.75, color: colors.textSecondary,
+        maxWidth: 580, marginBottom: '2rem',
+      }
+    }, DATA.bio),
+    React.createElement('div', {
+      style: { display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }
+    },
+      React.createElement('img', {
+        src: 'profile.jpeg',
+        style: {
+          width: 48, height: 48,
+          borderRadius: isTech ? 8 : '50%',
+          objectFit: 'cover', border: `2px solid ${colors.border}`,
+        }
+      }),
+      ...[ 
+        { label: 'GitHub', href: DATA.github, icon: 'ri-github-fill' },
+        { label: 'LinkedIn', href: DATA.linkedin, icon: 'ri-linkedin-fill' },
+        { label: 'Email', href: `mailto:${DATA.email}`, icon: 'ri-mail-line' },
+      ].map(l => React.createElement('a', {
+        key: l.label, href: l.href,
+        target: l.href.startsWith('mailto') ? undefined : '_blank',
+        style: {
+          color: colors.accent, textDecoration: 'none',
+          fontSize: '0.88rem', fontFamily: isTech ? fonts.mono : fonts.body,
+          transition: 'opacity 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+        }
+      }, React.createElement('i', { className: l.icon, style: { fontSize: '1.05rem' } }), l.label))
+    )
+  );
+}
+
+// === HERO: CENTERED ===
+function HeroCentered() {
+  const { colors, fonts, themeName } = useTheme();
+  const isTech = themeName === 'tech';
+  const isBold = themeName === 'bold';
+  return React.createElement('header', {
+    style: {
+      padding: '10rem 1.5rem 5rem', maxWidth: 1000, margin: '0 auto',
+      textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center',
+    }
+  },
+    React.createElement('img', {
+      src: 'profile.jpeg',
+      style: {
+        width: 130, height: 130,
+        borderRadius: isTech ? 16 : '50%',
+        objectFit: 'cover', border: `3px solid ${colors.border}`,
+        marginBottom: '2rem',
+      }
+    }),
+    React.createElement('p', {
+      style: {
+        fontFamily: isTech ? fonts.mono : fonts.body,
+        fontSize: '0.85rem', color: colors.accent,
+        fontWeight: 500, marginBottom: '0.8rem',
+        letterSpacing: '0.06em', textTransform: 'uppercase',
+      }
+    }, DATA.title),
+    React.createElement('h1', {
+      style: {
+        fontFamily: fonts.heading,
+        fontSize: isBold ? '3.8rem' : isTech ? '2.8rem' : '3.2rem',
+        fontWeight: isBold ? 800 : isTech ? 700 : 400,
+        color: colors.text, lineHeight: 1.05,
+        letterSpacing: isBold ? '-0.04em' : isTech ? '-0.03em' : '0',
+        marginBottom: '1.2rem',
+      }
+    }, DATA.name),
+    React.createElement('p', {
+      style: {
+        fontSize: '1.05rem', lineHeight: 1.7, color: colors.textSecondary,
+        maxWidth: 520, marginBottom: '2rem',
+      }
+    }, DATA.bio),
+    React.createElement('div', {
+      style: { display: 'flex', gap: '1.2rem' }
+    },
+      ...[
+        { label: 'GitHub', href: DATA.github, icon: 'ri-github-fill' },
+        { label: 'LinkedIn', href: DATA.linkedin, icon: 'ri-linkedin-fill' },
+        { label: 'Email', href: `mailto:${DATA.email}`, icon: 'ri-mail-line' },
+      ].map(l => React.createElement('a', {
+        key: l.label, href: l.href, target: l.href.startsWith('mailto') ? undefined : '_blank',
+        style: {
+          color: colors.accent, textDecoration: 'none', fontSize: '0.88rem',
+          fontFamily: isTech ? fonts.mono : fonts.body,
+          padding: '0.4rem 0.8rem', border: `1px solid ${colors.border}`,
+          borderRadius: 6, transition: 'all 0.2s',
+          display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+        },
+        onMouseEnter: e => { e.currentTarget.style.borderColor = colors.accent; },
+        onMouseLeave: e => { e.currentTarget.style.borderColor = colors.border; },
+      }, React.createElement('i', { className: l.icon, style: { fontSize: '1rem' } }), isTech ? l.label.toLowerCase() : l.label))
+    )
+  );
+}
+
+window.App = App;
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(window.App));
+  </script>
 </body>
 </html>
